@@ -29,8 +29,14 @@
       --err: #FF8A80;
     }
 
-    * { box-sizing: border-box }
-    html { scroll-behavior: smooth }
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -38,14 +44,43 @@
       font-family: Manrope, system-ui, sans-serif;
       -webkit-font-smoothing: antialiased
     }
-    body.no-scroll { overflow: hidden }
-    a { color: var(--text) }
-    img { display: block; max-width: 100% }
-    button, input, textarea { font: inherit; color: inherit }
 
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px }
-    .band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line) }
-    section { padding: 88px 0 }
+    body.no-scroll {
+      overflow: hidden
+    }
+
+    a {
+      color: var(--text)
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+      color: inherit
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .band {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    section {
+      padding: 88px 0
+    }
+
     .eyebrow {
       font-family: 'JetBrains Mono', monospace;
       font-size: 14px;
@@ -53,13 +88,46 @@
       letter-spacing: .08em;
       text-transform: uppercase
     }
-    h2 { margin: 12px 0 48px; font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -.01em }
-    .lead { margin: 0 0 40px; color: var(--muted); font-size: 18px; line-height: 1.5; max-width: 680px }
-    .grid { display: grid; gap: 20px }
-    .g4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) }
-    .g3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) }
-    .mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--dim) }
-    .ico { width: 20px; height: 20px; flex: none }
+
+    h2 {
+      margin: 12px 0 48px;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -.01em
+    }
+
+    .lead {
+      margin: 0 0 40px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 680px
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px
+    }
+
+    .g4 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    }
+
+    .g3 {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--dim)
+    }
+
+    .ico {
+      width: 20px;
+      height: 20px;
+      flex: none
+    }
 
     /* header */
     header {
@@ -70,238 +138,832 @@
       backdrop-filter: blur(8px);
       z-index: 10
     }
+
     .bar {
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-      gap: 16px; padding-top: 18px; padding-bottom: 18px
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 18px;
+      padding-bottom: 18px
     }
-    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; font-size: 17px }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px
+    }
+
     .logo-mark {
-      width: 36px; height: 36px; border-radius: 8px; background: var(--accent);
-      display: flex; align-items: center; justify-content: center
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center
     }
-    nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px }
-    nav a { text-decoration: none; color: var(--muted) }
-    nav a:hover { color: var(--text) }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 15px
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted)
+    }
+
+    nav a:hover {
+      color: var(--text)
+    }
 
     /* hero */
-    .hero { padding: 80px 0 80px }
+    .hero {
+      padding: 80px 0 80px
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 360px;
       gap: 56px;
       align-items: center
     }
+
     .hero h1 {
-      margin: 24px 0 0; font-size: clamp(38px, 5.4vw, 72px); line-height: 1.04;
-      font-weight: 800; letter-spacing: -.02em
-    }
-    .hero p { margin: 32px 0 0; font-size: clamp(18px, 2vw, 22px); line-height: 1.5; color: var(--muted); max-width: 720px }
-    .avatar {
-      position: relative; aspect-ratio: 4/5; border-radius: 20px; overflow: hidden;
-      background: var(--placeholder); border: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--dim); font-family: 'JetBrains Mono', monospace; font-size: 13px
-    }
-    .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover }
-    .avatar::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--accent)
+      margin: 24px 0 0;
+      font-size: clamp(38px, 5.4vw, 72px);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: -.02em
     }
 
-    .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 44px }
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
-      font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 10px;
-      min-height: 44px; border: 0; cursor: pointer; transition: transform .15s, background .15s
+    .hero p {
+      margin: 32px 0 0;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 720px
     }
-    .btn:hover { transform: translateY(-1px) }
-    .btn-primary { background: var(--accent); color: var(--on-accent) }
-    .btn-ghost { border: 1px solid var(--line-2); color: var(--text); font-weight: 600; background: transparent }
-    .btn-ghost:hover { background: var(--surface) }
+
+    .avatar {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--placeholder);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px
+    }
+
+    .avatar img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .avatar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 6px;
+      background: var(--accent)
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 44px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 16px 28px;
+      border-radius: 10px;
+      min-height: 44px;
+      border: 0;
+      cursor: pointer;
+      transition: transform .15s, background .15s
+    }
+
+    .btn:hover {
+      transform: translateY(-1px)
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--on-accent)
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line-2);
+      color: var(--text);
+      font-weight: 600;
+      background: transparent
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface)
+    }
+
     .stats {
-      display: flex; flex-wrap: wrap; gap: 48px; margin-top: 64px; padding-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin-top: 64px;
+      padding-top: 32px;
       border-top: 1px solid var(--line)
     }
-    .stat b { display: block; font-size: 36px; font-weight: 800 }
-    .stat span { display: block; color: var(--dim); font-size: 15px; margin-top: 4px }
+
+    .stat b {
+      display: block;
+      font-size: 36px;
+      font-weight: 800
+    }
+
+    .stat span {
+      display: block;
+      color: var(--dim);
+      font-size: 15px;
+      margin-top: 4px
+    }
 
     /* cards */
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px }
-    .card h3 { margin: 20px 0 10px; font-size: 21px; font-weight: 700 }
-    .card p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55 }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px
+    }
+
+    .card h3 {
+      margin: 20px 0 10px;
+      font-size: 21px;
+      font-weight: 700
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55
+    }
 
     /* stack */
-    .chips { display: flex; flex-wrap: wrap; gap: 12px }
-    .chip { border: 1px solid var(--line-2); border-radius: 999px; padding: 12px 22px; font-weight: 600; font-size: 17px }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .chip {
+      border: 1px solid var(--line-2);
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-weight: 600;
+      font-size: 17px
+    }
 
     /* projects */
     .project {
-      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-      overflow: hidden; display: flex; flex-direction: column
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
     }
-    .project-body { padding: 24px }
-    .project h3 { margin: 10px 0 8px; font-size: 22px; font-weight: 700 }
-    .project p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55 }
-    .more-wrap { display: none; margin-top: 24px; justify-content: center }
+
+    .project-body {
+      padding: 24px
+    }
+
+    .project h3 {
+      margin: 10px 0 8px;
+      font-size: 22px;
+      font-weight: 700
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55
+    }
+
+    .more-wrap {
+      display: none;
+      margin-top: 24px;
+      justify-content: center
+    }
 
     /* carousel */
-    .carousel { position: relative; aspect-ratio: 16/10; background: var(--placeholder) }
+    .carousel {
+      position: relative;
+      aspect-ratio: 16/10;
+      background: var(--placeholder)
+    }
+
     .slides {
-      display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory;
-      scrollbar-width: none; -webkit-overflow-scrolling: touch
+      display: flex;
+      height: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch
     }
-    .slides::-webkit-scrollbar { display: none }
+
+    .slides::-webkit-scrollbar {
+      display: none
+    }
+
     .slides img {
-      flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover;
-      scroll-snap-align: start; cursor: zoom-in
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      scroll-snap-align: start;
+      cursor: zoom-in
     }
+
     .c-empty {
-      position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
-      color: var(--dim); font-family: 'JetBrains Mono', monospace; font-size: 13px
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px
     }
-    .carousel.empty .c-empty { display: flex }
+
+    .carousel.empty .c-empty {
+      display: flex
+    }
+
     .c-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 44px; height: 44px; border-radius: 50%;
-      background: rgba(17, 19, 21, .72); border: 1px solid rgba(255, 255, 255, .18); color: #fff;
-      display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(17, 19, 21, .72);
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0
     }
-    .c-btn:hover { background: rgba(17, 19, 21, .92) }
-    .c-prev { left: 10px }
-    .c-next { right: 10px }
-    .c-dots { position: absolute; bottom: 4px; left: 0; right: 0; display: flex; justify-content: center }
+
+    .c-btn:hover {
+      background: rgba(17, 19, 21, .92)
+    }
+
+    .c-prev {
+      left: 10px
+    }
+
+    .c-next {
+      right: 10px
+    }
+
+    .c-dots {
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center
+    }
+
     .c-dots button {
-      width: 24px; height: 24px; border: 0; background: transparent; padding: 0; cursor: pointer;
-      display: flex; align-items: center; justify-content: center
+      width: 24px;
+      height: 24px;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center
     }
+
     .c-dots button::after {
-      content: ""; width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, .5)
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .5)
     }
-    .c-dots button.on::after { background: var(--accent) }
+
+    .c-dots button.on::after {
+      background: var(--accent)
+    }
+
     .c-count {
-      position: absolute; top: 10px; right: 10px; padding: 4px 10px; border-radius: 999px;
-      background: rgba(17, 19, 21, .72); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 12px
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(17, 19, 21, .72);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px
     }
+
     .c-zoom {
-      position: absolute; top: 10px; left: 10px; width: 32px; height: 32px; border-radius: 8px;
-      background: rgba(17, 19, 21, .72); display: flex; align-items: center; justify-content: center;
-      color: #fff; pointer-events: none
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(17, 19, 21, .72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      pointer-events: none
     }
+
     .carousel.single .c-btn,
     .carousel.single .c-dots,
     .carousel.empty .c-btn,
     .carousel.empty .c-dots,
     .carousel.empty .c-count,
-    .carousel.empty .c-zoom { display: none }
+    .carousel.empty .c-zoom {
+      display: none
+    }
 
     /* lightbox */
     #lightbox {
-      padding: 0; border: 0; background: transparent; color: #fff;
-      width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; margin: 0
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      margin: 0
     }
-    #lightbox::backdrop { background: rgba(0, 0, 0, .92) }
-    .lb-stage { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 56px 16px }
-    .lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; user-select: none }
+
+    #lightbox::backdrop {
+      background: rgba(0, 0, 0, .92)
+    }
+
+    .lb-stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 16px
+    }
+
+    .lb-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      user-select: none
+    }
+
     .lb-btn {
-      position: absolute; width: 48px; height: 48px; border-radius: 50%;
-      background: rgba(255, 255, 255, .12); border: 0; color: #fff; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; padding: 0
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0
     }
-    .lb-btn:hover { background: rgba(255, 255, 255, .22) }
-    .lb-close { top: 12px; right: 12px }
-    .lb-prev { left: 12px; top: 50%; transform: translateY(-50%) }
-    .lb-next { right: 12px; top: 50%; transform: translateY(-50%) }
+
+    .lb-btn:hover {
+      background: rgba(255, 255, 255, .22)
+    }
+
+    .lb-close {
+      top: 12px;
+      right: 12px
+    }
+
+    .lb-prev {
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    .lb-next {
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
     .lb-count {
-      position: absolute; top: 24px; left: 0; right: 0; text-align: center;
-      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #ddd; pointer-events: none
+      position: absolute;
+      top: 24px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #ddd;
+      pointer-events: none
     }
+
     #lightbox.single .lb-prev,
-    #lightbox.single .lb-next { display: none }
+    #lightbox.single .lb-next {
+      display: none
+    }
 
     /* steps */
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px }
-    .step { border-top: 2px solid var(--accent); padding-top: 20px }
-    .step h3 { margin: 8px 0; font-size: 20px; font-weight: 700 }
-    .step p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55 }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px
+    }
+
+    .step {
+      border-top: 2px solid var(--accent);
+      padding-top: 20px
+    }
+
+    .step h3 {
+      margin: 8px 0;
+      font-size: 20px;
+      font-weight: 700
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55
+    }
 
     /* contacts */
-    #contacts { padding: 96px 0 }
-    #contacts h2 { margin: 0 0 20px; font-size: clamp(34px, 5vw, 56px); letter-spacing: -.02em }
-    .contact-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start }
-    .contacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px }
+    #contacts {
+      padding: 96px 0
+    }
+
+    #contacts h2 {
+      margin: 0 0 20px;
+      font-size: clamp(34px, 5vw, 56px);
+      letter-spacing: -.02em
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: start
+    }
+
+    .contacts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px
+    }
+
     .contact {
-      display: flex; align-items: center; gap: 14px; text-decoration: none;
-      border: 1px solid var(--line-2); border-radius: 14px; padding: 20px;
-      min-height: 88px; transition: background .15s
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      border: 1px solid var(--line-2);
+      border-radius: 14px;
+      padding: 20px;
+      min-height: 88px;
+      transition: background .15s
     }
-    .contact:hover { background: var(--surface) }
+
+    .contact:hover {
+      background: var(--surface)
+    }
+
     .contact .c-ico {
-      width: 44px; height: 44px; border-radius: 10px; flex: none;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--surface); border: 1px solid var(--line)
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid var(--line)
     }
-    .contact .c-ico svg { width: 22px; height: 22px }
-    .contact .c-text { min-width: 0 }
-    .contact small { display: block; font-size: 13px; color: var(--dim); font-weight: 600 }
+
+    .contact .c-ico svg {
+      width: 22px;
+      height: 22px
+    }
+
+    .contact .c-text {
+      min-width: 0
+    }
+
+    .contact small {
+      display: block;
+      font-size: 13px;
+      color: var(--dim);
+      font-weight: 600
+    }
+
     .contact strong {
-      display: block; font-size: clamp(15px, 1.5vw, 18px); font-weight: 800; margin-top: 4px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis
+      display: block;
+      font-size: clamp(15px, 1.5vw, 18px);
+      font-weight: 800;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
     }
-    .contact.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent) }
-    .contact.primary small { color: var(--on-accent) }
-    .contact.primary .c-ico { background: rgba(17, 19, 21, .12); border-color: transparent }
-    .contact.primary:hover { filter: brightness(1.05) }
-    .contact.wide { grid-column: 1 / -1 }
+
+    .contact.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--on-accent)
+    }
+
+    .contact.primary small {
+      color: var(--on-accent)
+    }
+
+    .contact.primary .c-ico {
+      background: rgba(17, 19, 21, .12);
+      border-color: transparent
+    }
+
+    .contact.primary:hover {
+      filter: brightness(1.05)
+    }
+
+    .contact.wide {
+      grid-column: 1 / -1
+    }
 
     /* form */
-    .form-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px }
-    .form-card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800 }
-    .form-card > p { margin: 0 0 24px; color: var(--muted); font-size: 15px; line-height: 1.5 }
-    .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px }
-    .field label { font-size: 14px; font-weight: 600; color: var(--muted) }
-    .field input, .field textarea {
-      background: var(--bg); border: 1px solid var(--line-2); border-radius: 10px;
-      padding: 14px 16px; font-size: 16px; min-height: 48px; width: 100%
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px
     }
-    .field textarea { min-height: 96px; resize: vertical }
-    .field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent }
-    .row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px }
-    .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--dim); line-height: 1.45; margin: 4px 0 20px }
-    .consent input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); flex: none }
-    .honey { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden }
-    .form-status { margin-top: 14px; font-size: 15px; min-height: 22px }
-    .form-status.ok { color: var(--ok) }
-    .form-status.err { color: var(--err) }
-    .btn[disabled] { opacity: .6; cursor: progress; transform: none }
 
-    footer { border-top: 1px solid var(--line) }
+    .form-card h3 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 800
+    }
+
+    .form-card>p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px
+    }
+
+    .field label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted)
+    }
+
+    .field input,
+    .field textarea {
+      background: var(--bg);
+      border: 1px solid var(--line-2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 16px;
+      min-height: 48px;
+      width: 100%
+    }
+
+    .field textarea {
+      min-height: 96px;
+      resize: vertical
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+      border-color: transparent
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px
+    }
+
+    .consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--dim);
+      line-height: 1.45;
+      margin: 4px 0 20px
+    }
+
+    .consent input {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      accent-color: var(--accent);
+      flex: none
+    }
+
+    .honey {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden
+    }
+
+    .form-status {
+      margin-top: 14px;
+      font-size: 15px;
+      min-height: 22px
+    }
+
+    .form-status.ok {
+      color: var(--ok)
+    }
+
+    .form-status.err {
+      color: var(--err)
+    }
+
+    .btn[disabled] {
+      opacity: .6;
+      cursor: progress;
+      transform: none
+    }
+
+    footer {
+      border-top: 1px solid var(--line)
+    }
+
     .foot {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
-      padding-top: 28px; padding-bottom: 28px; color: var(--dim); font-size: 14px
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 28px;
+      padding-bottom: 28px;
+      color: var(--dim);
+      font-size: 14px
     }
 
     @media (max-width: 960px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 32px }
-      .avatar { order: -1; width: 220px; aspect-ratio: 1; border-radius: 50% }
-      .avatar::after { display: none }
-      .contact-layout { grid-template-columns: 1fr }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .avatar {
+        order: -1;
+        width: 220px;
+        aspect-ratio: 1;
+        border-radius: 50%
+      }
+
+      .avatar::after {
+        display: none
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr
+      }
     }
 
     @media (max-width: 640px) {
-      section { padding: 64px 0 }
-      .hero { padding: 40px 0 56px }
-      .avatar { width: 160px }
-      nav { gap: 16px; font-size: 14px }
-      .stats { gap: 28px }
-      .g3 { grid-template-columns: 1fr }
-      #projects:not(.expanded) .project:nth-child(n+4) { display: none }
-      #projects:not(.expanded) .more-wrap { display: flex }
-      .contacts { grid-template-columns: 1fr }
-      .row2 { grid-template-columns: 1fr }
-      .form-card { padding: 22px }
-      .lb-prev, .lb-next { top: auto; bottom: 16px; transform: none }
-      .lb-prev { left: calc(50% - 60px) }
-      .lb-next { right: calc(50% - 60px) }
-      .lb-stage { padding: 64px 8px 80px }
+      section {
+        padding: 64px 0
+      }
+
+      .hero {
+        padding: 40px 0 56px
+      }
+
+      .avatar {
+        width: 160px
+      }
+
+      nav {
+        gap: 16px;
+        font-size: 14px
+      }
+
+      .stats {
+        gap: 28px
+      }
+
+      .g3 {
+        grid-template-columns: 1fr
+      }
+
+      #projects:not(.expanded) .project:nth-child(n+4) {
+        display: none
+      }
+
+      #projects:not(.expanded) .more-wrap {
+        display: flex
+      }
+
+      .contacts {
+        grid-template-columns: 1fr
+      }
+
+      .row2 {
+        grid-template-columns: 1fr
+      }
+
+      .form-card {
+        padding: 22px
+      }
+
+      .lb-prev,
+      .lb-next {
+        top: auto;
+        bottom: 16px;
+        transform: none
+      }
+
+      .lb-prev {
+        left: calc(50% - 60px)
+      }
+
+      .lb-next {
+        right: calc(50% - 60px)
+      }
+
+      .lb-stage {
+        padding: 64px 8px 80px
+      }
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 520px;
+    }
+
+    .actions .btn {
+      justify-content: center;
+      border: 1px solid transparent;
+    }
+
+    .actions .btn-ghost {
+      border-color: var(--line-2);
+    }
+
+    @media (max-width: 480px) {
+      .actions {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -310,32 +972,43 @@
 
   <!-- Иконки: определены один раз, используются через <use href="#i-..."> -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path
+        d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
     </symbol>
-    <symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21.2 4.3 2.9 11.4c-.8.3-.8 1.5.1 1.8l4.6 1.5 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.5 4.7 3.4c.6.4 1.4.1 1.6-.6l3.2-15.2c.2-.9-.7-1.7-1.5-1.4z" />
+    <symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path
+        d="M21.2 4.3 2.9 11.4c-.8.3-.8 1.5.1 1.8l4.6 1.5 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.5 4.7 3.4c.6.4 1.4.1 1.6-.6l3.2-15.2c.2-.9-.7-1.7-1.5-1.4z" />
       <path d="m7.6 14.7 9.9-6.9-7.2 8" />
     </symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 21l1.7-4.8A8.6 8.6 0 1 1 7.9 19.4L3 21z" />
-      <path d="M9 8.3c-.3.9 0 2.4 1.4 3.9s3 2 3.9 1.6l.8-1.2-1.8-1-.8.7c-.8-.3-1.6-1.1-1.9-1.9l.7-.8-1-1.8z" fill="currentColor" stroke-width="1" />
+      <path d="M9 8.3c-.3.9 0 2.4 1.4 3.9s3 2 3.9 1.6l.8-1.2-1.8-1-.8.7c-.8-.3-1.6-1.1-1.9-1.9l.7-.8-1-1.8z"
+        fill="currentColor" stroke-width="1" />
     </symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
       <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
       <path d="m3 6 9 7 9-7" />
     </symbol>
-    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+      stroke-linejoin="round">
       <path d="m15 18-6-6 6-6" />
     </symbol>
-    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+      stroke-linejoin="round">
       <path d="m9 18 6-6-6-6" />
     </symbol>
-    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+      stroke-linecap="round">
       <path d="M6 6l12 12M18 6 6 18" />
     </symbol>
     <symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <circle cx="11" cy="11" r="7" /><path d="m20 20-4-4M11 8v6M8 11h6" />
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-4-4M11 8v6M8 11h6" />
     </symbol>
   </svg>
 
@@ -371,10 +1044,14 @@
             контроллеры и беспроводные устройства в одной логике. Wiren Board, KNX, Loxone, Home Assistant.</p>
           <div class="actions">
             <a class="btn btn-primary" href="https://t.me/+79618593762">
-              <svg class="ico" aria-hidden="true"><use href="#i-telegram" /></svg>Написать в Telegram
+              <svg class="ico" aria-hidden="true">
+                <use href="#i-telegram" />
+              </svg>Написать в Telegram
             </a>
             <a class="btn btn-ghost" href="tel:+79618593762">
-              <svg class="ico" aria-hidden="true"><use href="#i-phone" /></svg>Позвонить
+              <svg class="ico" aria-hidden="true">
+                <use href="#i-phone" />
+              </svg>Позвонить
             </a>
           </div>
           <div class="stats">
@@ -442,7 +1119,7 @@
     <section id="stack">
       <div class="wrap">
         <div class="eyebrow">02 / Системы. Протоколы. Производители.</div>
-        <h2 style="margin-bottom:16px">С чем работаю</h2>
+        <h2 style="margin-bottom:16px">Имею опыт работы с данными производителями и протоколами</h2>
         <p class="lead">Специализация — гибридные системы: надёжная проводная основа и беспроводные устройства там, где
           кабель уже не проложить.</p>
         <div class="chips">
@@ -506,7 +1183,8 @@
               <div class="mono">KNX · iRidi · Wiren Board</div>
               <h3>Частный дом, Барвиха — 1800 м²</h3>
               <p>Гибридная система на KNX и Wiren Board с визуализацией в iRidi. Интеграции ZONT, Zigbee, Hikvision,
-                Sonos и другие. В доме реализовано управление климатом, вентиляцией и шторами. Сделана заготовка для освещения.</p>
+                Sonos и другие. В доме реализовано управление климатом, вентиляцией и шторами. Сделана заготовка для
+                освещения.</p>
             </div>
           </article>
 
@@ -523,7 +1201,8 @@
               <div class="mono">Wiren Board · полный цикл · Aqara</div>
               <h3>Nagatino i-Land</h3>
               <p>Проект системы и щита, сборка, коммутация и пусконаладка — от начала до конца. Breezart, Onokom, Aqara,
-                Wirenboard и Gledopt позволили создать квартиру, в которой весь климат, вентиляция, освещение, умная дверь, звонок и шторы собраны в единую систему.</p>
+                Wirenboard и Gledopt позволили создать квартиру, в которой весь климат, вентиляция, освещение, умная
+                дверь, звонок и шторы собраны в единую систему.</p>
             </div>
           </article>
 
@@ -538,7 +1217,8 @@
             <div class="project-body">
               <div class="mono">Loxone</div>
               <h3>ЖК Homecity</h3>
-              <p>Две зеркальные квартиры: сборка щитов Loxone, коммутация и запуск. 40 каналов реле, 20 каналов подсветки, Dali и шторы.</p>
+              <p>Две зеркальные квартиры: сборка щитов Loxone, коммутация и запуск. 40 каналов реле, 20 каналов
+                подсветки, Dali и шторы.</p>
             </div>
           </article>
 
@@ -553,7 +1233,8 @@
             <div class="project-body">
               <div class="mono">Wiren Board · ПНР · Loxone</div>
               <h3>ЖК Вери</h3>
-              <p>Пусконаладка системы на Wiren Board, интеграция кондиционеров, отопления и вентиляция. Wirenboard, Onokom, VentMachine и Loxone.
+              <p>Пусконаладка системы на Wiren Board, интеграция кондиционеров, отопления и вентиляция. Wirenboard,
+                Onokom, VentMachine и Loxone.
                 Полная интеграция всех отдельных систем в единую с настройкой управления.</p>
             </div>
           </article>
@@ -570,7 +1251,8 @@
               <div class="mono">Wiren Board · ПНР · Loxone</div>
               <h3>ЖК Хорошово</h3>
               <p>Пусконаладка щита на Wiren Board. Интеграция бризеров Tion и кондиционеров Haier, теплого пола и
-                освещения. Диммирование 220V - 3 канала, диммируемые 24V - 24 канала, переключение 220V - 30 каналов и 8 каналов с управлением 0-10V.</p>
+                освещения. Диммирование 220V - 3 канала, диммируемые 24V - 24 канала, переключение 220V - 30 каналов и 8
+                каналов с управлением 0-10V.</p>
             </div>
           </article>
 
@@ -585,10 +1267,12 @@
             <div class="project-body">
               <div class="mono">Home Assistant</div>
               <h3>ЖК по ренновации</h3>
-              <p>Ремонт от застройщика и умный дом строился по отдельным системам без связки друг с другом. С минимальными затратами на замену оборудования собрали единую систему на базе HomeAssistant для совместной работы всех систем.</p>
+              <p>Ремонт от застройщика и умный дом строился по отдельным системам без связки друг с другом. С
+                минимальными затратами на замену оборудования собрали единую систему на базе HomeAssistant для
+                совместной работы всех систем.</p>
             </div>
           </article>
-          
+
           <article class="project">
             <div class="carousel">
               <div class="slides">
@@ -599,7 +1283,8 @@
             <div class="project-body">
               <div class="mono">KNX · Wirenboard</div>
               <h3>Частный дом</h3>
-              <p>Проект по переводу с незавершенного дома на KNX · Iridi к завершенному варианту с KNX · Wirenboard. Интеграция уличного свещения, кондиционеров, вентиляции, отолпения и умной двери на протоколе ZWave.</p>
+              <p>Проект по переводу с незавершенного дома на KNX · Iridi к завершенному варианту с KNX · Wirenboard.
+                Интеграция уличного свещения, кондиционеров, вентиляции, отолпения и умной двери на протоколе ZWave.</p>
             </div>
           </article>
 
@@ -614,7 +1299,8 @@
             <div class="project-body">
               <div class="mono">Home Assistant</div>
               <h3>Собственный умный дом</h3>
-              <p>Полигон для новых устройств и сценариев. Позволяет не просто на тестовом стенде сделать интеграцию, а пожить и попробовать результаты своей работы.</p>
+              <p>Полигон для новых устройств и сценариев. Позволяет не просто на тестовом стенде сделать интеграцию, а
+                пожить и попробовать результаты своей работы.</p>
             </div>
           </article>
 
@@ -629,7 +1315,10 @@
             <div class="project-body">
               <div class="mono">Home Assistant · Wirenboard · Apple</div>
               <h3>Другие проекты</h3>
-              <p>Было множество других проектов. Фото 1 - сборка щита автоматизации для компании Монолит на выставочный стенд. Фото 2 - Перевёл автономную сигнализацию на собственную плату на ESP и связал её с Home Assistant. Охрана ставится и снимается автоматически по сценариям, а все датчики видны в общей системе дома.</p>
+              <p>Было множество других проектов. Фото 1 - сборка щита автоматизации для компании Монолит на выставочный
+                стенд. Фото 2 - Перевёл автономную сигнализацию на собственную плату на ESP и связал её с Home
+                Assistant. Охрана ставится и снимается автоматически по сценариям, а все датчики видны в общей системе
+                дома.</p>
             </div>
           </article>
 
@@ -672,24 +1361,33 @@
     <section id="contacts" style="border-top:1px solid var(--line)">
       <div class="wrap">
         <h2>Есть объект? Обсудим!</h2>
-        <p class="lead">Пришлите проект или описание задачи — задам вопросы, отвечу на ваши и оценю сроки и стоимость.</p>
+        <p class="lead">Пришлите проект или описание задачи — задам вопросы, отвечу на ваши и оценю сроки и стоимость.
+        </p>
 
         <div class="contact-layout">
           <div class="contacts">
             <a class="contact primary" href="https://t.me/+79618593762">
-              <span class="c-ico"><svg aria-hidden="true"><use href="#i-telegram" /></svg></span>
+              <span class="c-ico"><svg aria-hidden="true">
+                  <use href="#i-telegram" />
+                </svg></span>
               <span class="c-text"><small>Telegram</small><strong>Написать</strong></span>
             </a>
             <a class="contact" href="https://wa.me/79618593762">
-              <span class="c-ico"><svg aria-hidden="true"><use href="#i-whatsapp" /></svg></span>
+              <span class="c-ico"><svg aria-hidden="true">
+                  <use href="#i-whatsapp" />
+                </svg></span>
               <span class="c-text"><small>WhatsApp</small><strong>Написать</strong></span>
             </a>
             <a class="contact wide" href="tel:+79618593762">
-              <span class="c-ico"><svg aria-hidden="true"><use href="#i-phone" /></svg></span>
+              <span class="c-ico"><svg aria-hidden="true">
+                  <use href="#i-phone" />
+                </svg></span>
               <span class="c-text"><small>Телефон</small><strong>+7 961 859-37-62</strong></span>
             </a>
             <a class="contact wide" href="mailto:jimelegend@gmail.com">
-              <span class="c-ico"><svg aria-hidden="true"><use href="#i-mail" /></svg></span>
+              <span class="c-ico"><svg aria-hidden="true">
+                  <use href="#i-mail" />
+                </svg></span>
               <span class="c-text"><small>Почта</small><strong>jimelegend@gmail.com</strong></span>
             </a>
           </div>
@@ -741,7 +1439,8 @@
 
   <footer>
     <div class="wrap foot">
-      <span>© <span id="year">2026</span> Самозанятый Степанов Аркадий Игоревич · ИНН: 771234567890 · Статус: Плательщик налога на профессиональный доход (НПД)</span>
+      <span>© <span id="year">2026</span> Самозанятый Степанов Аркадий Игоревич · ИНН: 771234567890 · Статус: Плательщик
+        налога на профессиональный доход (НПД)</span>
       <span>Москва, Краснодар, Оренбург</span>
     </div>
   </footer>
@@ -751,13 +1450,19 @@
     <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""></div>
     <div class="lb-count" id="lb-count"></div>
     <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Закрыть">
-      <svg class="ico" aria-hidden="true"><use href="#i-close" /></svg>
+      <svg class="ico" aria-hidden="true">
+        <use href="#i-close" />
+      </svg>
     </button>
     <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Предыдущее фото">
-      <svg class="ico" aria-hidden="true"><use href="#i-left" /></svg>
+      <svg class="ico" aria-hidden="true">
+        <use href="#i-left" />
+      </svg>
     </button>
     <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Следующее фото">
-      <svg class="ico" aria-hidden="true"><use href="#i-right" /></svg>
+      <svg class="ico" aria-hidden="true">
+        <use href="#i-right" />
+      </svg>
     </button>
   </dialog>
 
